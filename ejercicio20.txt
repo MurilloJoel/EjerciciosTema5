@@ -1,0 +1,42 @@
+/*
+ * Ejercicio 20: Dadas una base y un exponente enteros, calcular la potencia.
+ */
+
+/**
+ *
+ * @author joel
+ */
+import java.util.Scanner;
+
+public class Ejercicio20 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        int exponente;
+        int base;
+
+        System.out.print("Ingrese la base: ");
+        base = teclado.nextInt();
+
+        System.out.print("Ingrese el exponente: ");
+        exponente = teclado.nextInt();
+        double resultado = 1;
+
+        if (exponente > 0) {
+            for (int i = 1; i <= exponente; i++) {
+                resultado *= base;
+            }
+        } else if (exponente == 0) {
+            resultado = 1;
+        } else {
+            exponente = -exponente;
+            for (int contador = 1; contador <= exponente; contador++) {
+                resultado /= base;
+            }
+        }
+        System.out.println("El resultado de elevar la base " + base+ " al exponente "+ exponente+ " es: " + (int)resultado);
+    }
+}
