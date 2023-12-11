@@ -34,7 +34,7 @@ package pruebas;
  *
  * @author developer
  */
-public class Pruebas {
+public class Ejercicio1_examen {
 
     /**
      * @param args the command line arguments
