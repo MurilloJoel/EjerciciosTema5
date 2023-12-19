@@ -31,7 +31,7 @@ public class Empresa {
 
     @Override
     public String toString() {
-        return nombre + "\t" + numEmpleados + "\t" + beneficios + " euros";
+        return nombre + "\t" + numEmpleados + "\t" + beneficios + " euritos";
     }
 
     public String getNombre() {

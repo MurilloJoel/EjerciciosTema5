@@ -42,14 +42,14 @@ import java.time.LocalDate;
 
 public class HistoriaEmpresas {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner teclado = new Scanner(System.in);
         LocalDate fecha= LocalDate.now();
         // Mostrar la fecha de hoy
         System.out.println("Fecha de hoy: " + fecha); // Aquú­ deberú­as usar las librerú­as de manejo de tiempos históricos de Java
 
         // Leer el número de empresas a crear
         System.out.print("Ingrese el número de empresas a crear: ");
-        int n = scanner.nextInt();
+        int n = teclado.nextInt();
 
         Empresa[] empresas = new Empresa[n];
 
@@ -57,7 +57,7 @@ public class HistoriaEmpresas {
             // Leer los datos de la empresa
             System.out.println("Ingrese los datos de la empresa " + (i + 1) + ":");
             System.out.print("Nombre: ");
-            String nombre = scanner.next();
+            String nombre = teclado.next();
             
             int numEmpleados = 1+(int)(Math.random()*49);
             System.out.print("Número de empleados (1-50): " + numEmpleados+ "\n");
@@ -66,7 +66,7 @@ public class HistoriaEmpresas {
             System.out.print("Beneficios: ");
             double beneficios;
             try {
-                beneficios = scanner.nextDouble();
+                beneficios = teclado.nextDouble();
             } catch (Exception e) {
                 System.out.println("No es un número");
                 return;
@@ -85,7 +85,7 @@ public class HistoriaEmpresas {
             System.out.println("3. Mostrar el número medio de empleados de las empresas introducidas.");
             System.out.println("0. Salir");
             System.out.print("Seleccione una opción: ");
-            opcion = scanner.nextInt();
+            opcion = teclado.nextInt();
 
             switch (opcion) {
                 case 1:
@@ -106,7 +106,7 @@ public class HistoriaEmpresas {
             }
         } while (opcion != 0);
 
-        scanner.close();
+        teclado.close();
     }
 
     public static void mostrarEmpresas(Empresa[] empresas) {
