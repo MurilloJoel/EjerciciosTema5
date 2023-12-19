@@ -51,7 +51,7 @@ public class Ejercicio1_examen {
 
         boolean numRep = false;
         char num2 = '0';
-        char a = 'A';
+        char valorA = 'A';
         int contador1 = 0;
         int contador2 = 0;
         int contadorSimbolos=0;
@@ -77,14 +77,14 @@ public class Ejercicio1_examen {
 
         for (int i = 0; i < 26; i++) {
             for (int j = 0; j < contraseña.length(); j++) {
-                if (contraseña2[j] == a) {
+                if (contraseña2[j] == valorA) {
                     contadorMayus++;
                 }
             }
-            a++;
+            valorA++;
         }
 if (contadorMayus < 1) {
-            resultado += "Te falta una mayuscula\n";
+            resultado += "Te falta una mayúscula\n";
             verificador = false;
         }
         for (int i = 0; i < contraseña2.length; i++) {
