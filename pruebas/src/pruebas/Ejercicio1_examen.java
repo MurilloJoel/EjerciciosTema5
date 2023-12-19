@@ -30,17 +30,124 @@ Ejemplos:
  */
 package pruebas;
 
-/**
- *
- * @author developer
- */
+import java.util.Scanner;
+
+/*
+ 
+
+    @author Mario Martin*/
+
 public class Ejercicio1_examen {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        
+    /*
+    @param args the command line arguments
+    */
+      public static void main(String[] args) {
+          Scanner sc = new Scanner(System.in);
+
+
+        boolean verificador = true;
+        String contraseña;
+
+        boolean numRep = false;
+        char num2 = '0';
+        char a = 'A';
+        int contador1 = 0;
+        int contador2 = 0;
+        int contadorSimbolos=0;
+        int contadorMayus = 0;
+        String resultado = "";
+        System.out.println("Introduce una contraseña");
+        contraseña = sc.nextLine();
+
+        char[] contraseña2 = new char[contraseña.length()];
+
+        if (contraseña.length() < 8) {
+            verificador = false;
+            resultado += "Tu contraseña es demasiado corta\n";
+        }
+        for (int i = 0; i < contraseña.length(); i++) {
+            contraseña2[i] = contraseña.charAt(i);
+        }
+        if (contraseña.toLowerCase() == contraseña) {
+            resultado += "Falta al menos una mayuscula en tu contraseña\n";
+            verificador = false;
+
+        }
+
+        for (int i = 0; i < 26; i++) {
+            for (int j = 0; j < contraseña.length(); j++) {
+                if (contraseña2[j] == a) {
+                    contadorMayus++;
+                }
+            }
+            a++;
+        }
+if (contadorMayus < 1) {
+            resultado += "Te falta una mayuscula\n";
+            verificador = false;
+        }
+        for (int i = 0; i < contraseña2.length; i++) {
+            switch (contraseña2[i]) {
+                case '1':
+                case '2':
+                case '3':
+                case '4':
+                case '5':
+                case '6':
+                case '7':
+                case '8':
+                case '9':
+                case '0':
+                    contador1++;
+                    break;
+            }
+        }
+        if (contador1 < 2) {
+            resultado += "Te faltan 2 numeros titan\n";
+            verificador = false;
+        }
+        for (int i = 0; i < 10; i++) {
+            for (int j = 0; j < contraseña2.length; j++) {
+                if (contraseña2[j] == num2) {
+                    contador2++;
+                }
+                if (contador2 > 2) {
+                    numRep = true;
+                }
+            }
+            num2++;
+        }
+        if (numRep == true) {
+            resultado += "Se repiten 2 numeros titan\n";
+            verificador = false;
+        }
+        for (int i = 0; i < contraseña2.length; i++) {
+            switch (contraseña2[i]) {
+                case '&':
+                case '%':
+                case '_':
+                case '-':
+                case '/':
+                case '$':
+                    contadorSimbolos++;
+                    break;
+            }
+        }
+        if (contadorSimbolos<2){
+            resultado+="Te faltan simbolos crack\n";
+            verificador=false;
+        }
+
+        //Resultado de la contraseña
+        if (verificador == true) {
+            System.out.println("Contraseña bien hecha");
+        } else {
+            System.out.println("Contraseña mal hecha");
+            System.out.print(resultado);
+
+        }
+
     }
-    
+
 }
